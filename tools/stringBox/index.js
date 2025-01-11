@@ -32,6 +32,23 @@ const stringBox = {
           return bigCamelCaseStr;
         }
     },
+    underlineToCamelCase: function(str, type) {
+        type = type || 'small';
+        var parts = str.split("_");
+        // 遍历数组，将每个单词的首字母大写，并拼接起来
+        for (var i = 1; i < parts.length; i++) {
+            parts[i] = parts[i].charAt(0).toUpperCase() + parts[i].slice(1);
+        }
+        // 将数组中的元素连接起来，形成新的字符串
+        var camelCaseStr = parts.join("");
+        // 返回转换后的字符串
+        if (type === 'small') {
+          return camelCaseStr;
+        } else {
+          let bigCamelCaseStr = camelCaseStr.charAt(0).toUpperCase() + camelCaseStr.slice(1);
+          return bigCamelCaseStr;
+        }
+    },
     reverseString: function(str) {
         let arr = str.split('');
         // 反转数组，使用reverse()方法

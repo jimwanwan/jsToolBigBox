@@ -8,9 +8,9 @@ const dataBox = {
         const dataLength = data.length;
         let luckData = [];
         for (let i=0;i<num;i++) {
-            const lcukIndex = Math.floor(Math.random() * (dataLength-i));
-            luckData.push(allData[lcukIndex]);
-            allData.splice(lcukIndex, 1);
+            const luckIndex = Math.floor(Math.random() * (dataLength-i));
+            luckData.push(allData[luckIndex]);
+            allData.splice(luckIndex, 1);
         }
         return luckData;
     },
